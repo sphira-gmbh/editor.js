@@ -490,6 +490,13 @@ export default class BlockManager extends Module {
      * @type {boolean}
      */
     this.currentBlock.focused = true;
+
+    window.setTimeout(() => {
+      this.Editor.BlockSettings.close();
+    }, 20);
+    window.setTimeout(() => {
+      this.Editor.BlockSettings.open();
+    }, 100);
   }
 
   /**

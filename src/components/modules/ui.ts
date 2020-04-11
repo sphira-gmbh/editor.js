@@ -481,7 +481,7 @@ export default class UI extends Module {
      * Do not fire check on clicks at the Inline Toolbar buttons
      */
     const target = event.target as HTMLElement;
-    const clickedInsideOfEditor = this.nodes.holder.contains(target) || Selection.isAtEditor;
+    const clickedInsideOfEditor = this.nodes.holder.contains(target) || Selection.isAtEditor || document.querySelector('.settings').contains(target);
 
     if (!clickedInsideOfEditor) {
       /**

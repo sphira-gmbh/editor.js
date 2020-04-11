@@ -125,6 +125,7 @@ export default class BlocksAPI extends Module {
    */
   public render(data: OutputData): Promise<void> {
     this.Editor.BlockManager.clear();
+    this.Editor.BlockSettings.close();
     return this.Editor.Renderer.render(data.blocks);
   }
 
