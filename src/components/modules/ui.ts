@@ -362,7 +362,11 @@ export default class UI extends Module {
    * @param {KeyboardEvent} event
    */
   private defaultBehaviour(event: KeyboardEvent): void {
-    const keyDownOnEditor = (event.target as HTMLElement).closest(`.${this.CSS.editorWrapper}`);
+    /**
+     * SPHIRA
+     * Allow keydown-events also on settings pane
+     */
+    const keyDownOnEditor = (event.target as HTMLElement).closest(`.${this.CSS.editorWrapper}, .settings`);
     const {currentBlock} = this.Editor.BlockManager;
     const isMetaKey = event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
 
@@ -481,6 +485,10 @@ export default class UI extends Module {
      * Do not fire check on clicks at the Inline Toolbar buttons
      */
     const target = event.target as HTMLElement;
+    /**
+     * SPHIRA
+     * Allow clicks inside settings panel without removing selection
+     */
     const clickedInsideOfEditor = this.nodes.holder.contains(target) || Selection.isAtEditor || document.querySelector('.settings').contains(target);
 
     if (!clickedInsideOfEditor) {

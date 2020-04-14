@@ -104,8 +104,11 @@ export default class BlockSettings extends Module {
 
     /**
      * Highlight content of a Block we are working with
+     *
+     * SPHIRA
+     * Selection would delete the block on keyinput
      */
-    this.Editor.BlockManager.currentBlock.selected = true;
+    // this.Editor.BlockManager.currentBlock.selected = true;
 
     /**
      * Fill Tool's settings
@@ -118,9 +121,13 @@ export default class BlockSettings extends Module {
     this.addDefaultSettings();
 
     /** Tell to subscribers that block settings is opened */
-    this.Editor.Events.emit(this.events.opened);
+    // this.Editor.Events.emit(this.events.opened);
 
-    this.flipper.activate(this.blockTunesButtons);
+    /**
+     * SPHIRA
+     * Woul make the cursor jump to first entry of checklist
+     */
+    // this.flipper.activate(this.blockTunesButtons);
   }
 
   /**

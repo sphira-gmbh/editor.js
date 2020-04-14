@@ -72,8 +72,12 @@ export default class BlockEvents extends Module {
      *  - clear block highlighting
      */
     if (_.isPrintableKey(event.keyCode)) {
-      this.Editor.Toolbar.close();
-      this.Editor.ConversionToolbar.close();
+      /**
+       * SPHIRA
+       * Don't close settings while editing
+       */
+      // this.Editor.Toolbar.close();
+      // this.Editor.ConversionToolbar.close();
 
       /**
        * Allow to use shortcuts with selected blocks
@@ -82,8 +86,12 @@ export default class BlockEvents extends Module {
       const isShortcut = event.ctrlKey || event.metaKey || event.altKey || event.shiftKey;
 
       if (!isShortcut) {
-        this.Editor.BlockManager.clearFocused();
-        this.Editor.BlockSelection.clearSelection(event);
+        /**
+         * SPHIRA
+         * Don't remove selection of block while editing
+         */
+         // this.Editor.BlockManager.clearFocused();
+         // this.Editor.BlockSelection.clearSelection(event);
       }
     }
   }
