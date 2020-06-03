@@ -234,7 +234,7 @@ export default class UI extends Module {
    * Check for mobile mode and cache a result
    */
   private checkIsMobile(): void {
-    this.isMobile = window.innerWidth < 650;
+    this.isMobile = window.innerWidth < 10;
   }
 
   /**
