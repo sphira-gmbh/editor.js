@@ -553,7 +553,7 @@ export default class UI extends Module {
      * SPHIRA
      * Allow clicks inside settings panel without removing selection
      */
-    const clickedInsideOfEditor = this.nodes.holder.contains(target) || Selection.isAtEditor || document.querySelector('.settings').contains(target);
+    const clickedInsideOfEditor = this.nodes.holder.contains(target) || Selection.isAtEditor;
 
     if (!clickedInsideOfEditor) {
       /**
